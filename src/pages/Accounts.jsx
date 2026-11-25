@@ -182,6 +182,7 @@ export default function Accounts({ data, onDataChange, onNavigate }) {
         {accounts.length === 0 ? (
           <p className="empty-text">No accounts yet. Add one above — you can add as many as you need.</p>
         ) : (
+          <div className="table-scroll">
           <table className="accounts-table">
             <thead>
               <tr>
@@ -216,6 +217,7 @@ export default function Accounts({ data, onDataChange, onNavigate }) {
               ))}
             </tbody>
           </table>
+          </div>
         )}
       </div>
     </main>

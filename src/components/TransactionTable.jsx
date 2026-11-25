@@ -25,6 +25,7 @@ export default function TransactionTable({ data, transactions, onDataChange, lim
       {txns.length === 0 ? (
         <p className="empty-text">Add your first expense or income to see it here.</p>
       ) : (
+        <div className="table-scroll">
         <table className="txn-table">
           <thead>
             <tr>
@@ -56,6 +57,7 @@ export default function TransactionTable({ data, transactions, onDataChange, lim
             ))}
           </tbody>
         </table>
+        </div>
       )}
       {editingTxn && (
         <EditTransactionModal

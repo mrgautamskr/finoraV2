@@ -114,6 +114,7 @@ export default function Budgets({ data, onDataChange }) {
       {info.budgets.length > 0 ? (
         <div className="card">
           <h2>📋 Category budgets</h2>
+          <div className="table-scroll">
           <table className="budgets-table">
             <thead>
               <tr>
@@ -148,6 +149,7 @@ export default function Budgets({ data, onDataChange }) {
               })}
             </tbody>
           </table>
+          </div>
         </div>
       ) : (
         <div className="card"><p className="empty-text">No budgets set for this month yet.</p></div>
