@@ -6,7 +6,7 @@ import { transactionsCSV, budgetsCSV, downloadCSV, downloadJSON } from '../lib/e
 import { getBudgetInfo, currentMonthKey } from '../lib/stats'
 import { supabase, isSupabaseConfigured } from '../lib/supabase'
 
-export default function Settings({ data, onDataChange }) {
+export default function Settings({ data, onDataChange, onNavigate }) {
   const settings = data.settings
   const profile = data.profile || {}
   const [note, setNote] = useState(null)
@@ -26,6 +26,7 @@ export default function Settings({ data, onDataChange }) {
 
   function logout() {
     supabase?.auth.signOut().catch(() => {})
+    if (onNavigate) onNavigate('auth')
   }
 
   function addCategory(e) {

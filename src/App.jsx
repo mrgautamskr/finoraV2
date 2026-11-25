@@ -123,7 +123,7 @@ export default function App() {
     )
   }
 
-  if (authState === 'signedOut' && isSupabaseConfigured) {
+  if ((authState === 'signedOut' || page === 'auth') && isSupabaseConfigured) {
     return <AuthPage signUp={signUp} signIn={signIn} error={authError} />
   }
 
